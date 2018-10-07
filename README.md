@@ -1,2 +1,1 @@
-# graphql-react
-Using GraphQL with React
+# car-lovers-graphql
