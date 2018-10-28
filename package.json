@@ -4,7 +4,9 @@
   "description": "React with GraphQL",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.js --ignore client"
+    "client": "npm run start --prefix client",
+    "server": "nodemon server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,8 @@
   "homepage": "https://github.com/bmehra16/car-lovers-graphql#readme",
   "dependencies": {
     "axios": "^0.18.0",
+    "concurrently": "^4.0.1",
+    "cors": "^2.8.4",
     "express": "^4.16.3",
     "express-graphql": "^0.6.12",
     "graphql": "^14.0.2",

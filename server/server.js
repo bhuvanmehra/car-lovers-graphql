@@ -2,6 +2,9 @@ const express = require('express');
 const expressGraphQL = require('express-graphql');
 const schema = require('./schema/schema');
 const app = express();
+const cors = require('cors')
+
+app.use(cors());
 
 app.use(
   '/graphql',
@@ -11,10 +14,4 @@ app.use(
   })
 );
 
-app.get('/', (req, res) => {
-  res.send('Hello Express!!');
-});
-
-app.listen(4000, () => {
-  console.log('🚀 Server Up. Listening...');
-});
+module.exports = app;
