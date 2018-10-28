@@ -14,6 +14,7 @@ cd ..
 npm run dev
 ```
 Dev app will be up on `http://localhost:3000/`.
+GraphQL Server would be running on `http://localhost:4000/`.
 
 ### Steps to run unit tests
 ```
