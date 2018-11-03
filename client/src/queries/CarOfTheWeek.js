@@ -8,7 +8,8 @@ export default gql`
       model {
         id,
         name,
-        price
+        price,
+        imageUrl
       }
     }
   }

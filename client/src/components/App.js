@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-// import { connect } from 'react-redux';
-// import { fetchCars } from '../actions';
-
 import Home from './Home'; 
-// import Search from './Search';
+import Search from './Search';
 import Header from './Header';
 // import CarShow from './CarShow';
 
@@ -19,6 +16,7 @@ class App extends Component{
         <div>
             <Header />
             <Route exact path="/" component={Home} />
+            <Route exact path="/search" component={Search} />
         </div>
         </BrowserRouter>
       </div>
