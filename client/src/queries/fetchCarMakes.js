@@ -5,7 +5,8 @@ export default gql`
     AllMakes {
       name,
       models {
-        name
+        name,
+        id,
       }
     }
   }

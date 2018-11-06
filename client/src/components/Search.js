@@ -1,23 +1,22 @@
 import React, { Component } from 'react';
 import { Query } from 'react-apollo';
 import Select from './Select';
-import _ from 'lodash';
 import query from '../queries/fetchCarMakes';
 
 class Search extends Component {
   state = {
     selectedMake : '',
-    selectedModel : ''
+    selectedModel : '',
   };
 
-  onSubmit() {
-    const cars = this.props.cars.model;
-    const { selectedModel } = this.state;
+  onSubmit(AllMakes) {
+    const { selectedModel, selectedMake } = this.state;
     if ( selectedModel === '') return null;
+    let carModels = AllMakes.find(make => make.name === selectedMake);
+    let carModel = carModels.models.find(model => model.name === selectedModel);
 
-    let selectedCar = _.find(cars, {"name": selectedModel});
     this.props.history.push({
-      pathname: `/make/model/${selectedCar.id}`,
+      pathname: `/make/model/${carModel.id}`,
     });
   }
   onChange(prop) {
@@ -43,19 +42,18 @@ class Search extends Component {
   render() {
     const { selectedModel } = this.state;
     // if(typeof(carMakes) === 'undefined' || !carMakes || !carModels) return null;
-
     let makeOptionItems = (carMakes) => carMakes.map((carMake) => <option key={carMake} value={carMake}>{carMake}</option>);
     
-
     return (
       <Query query={query}>
         {({ loading, error, data }) => {
           if (loading) return <p>Loading...</p>;
           if (error) return <p>Something went wrong. Please try again.</p>;
 
-          console.log('data', data);
           return (
-            <form onSubmit={this.onSubmit.bind(this)}>
+            <form onSubmit={() => {
+              this.onSubmit(data.AllMakes)
+            }}>
             <SearchComponent />
             <Select
               label="Manufacturer"
