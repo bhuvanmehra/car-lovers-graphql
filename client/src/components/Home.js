@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Query } from 'react-apollo';
 import query from '../queries/CarOfTheWeek';
 import Card from './Card';
+import '../style/style.css'
 
 class Home extends Component {
   render() {
@@ -12,6 +13,7 @@ class Home extends Component {
           if (error) return <p>Something went wrong. Please try again.(</p>;
           return (
             <div>
+              <HomeComponent />
               <Card carModel={data.CarOfTheWeek.model} />
               <p className="flow-text">{data.CarOfTheWeek.review}</p>
             </div>

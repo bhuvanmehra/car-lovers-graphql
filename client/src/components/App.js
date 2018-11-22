@@ -14,7 +14,7 @@ class App extends Component {
             <Header />
             <Route exact path="/" component={Home} />
             <Route exact path="/search" component={Search} />
-            <Route path="/make/model/:id" component={CarShow} />
+            <Route path="/:make/:model/:id" component={CarShow} />
         </div>
         </BrowserRouter>
       </div>

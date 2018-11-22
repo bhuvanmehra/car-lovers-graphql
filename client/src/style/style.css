@@ -1,0 +1,42 @@
+.home-title {
+  margin: 20px;
+  font-size: 20px;
+  align-items: center;
+}
+
+.imageCard {
+  display: flex;
+  align-items: flex-start; 
+  width: 100%;
+}
+
+.imageCard img div {
+  height: 0%;
+  width: 100%;
+  margin: 0 5px;
+}
+
+.logo {
+  margin-left: 20px;
+  font-size: 20px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+
+.search {
+  font-size: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.select {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.btnSearch {
+  margin: 10px;
+  padding: 10px;
+}

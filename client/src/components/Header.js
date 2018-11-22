@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../style/style.css'
 
 const Header = () => {
   return (
@@ -7,7 +8,7 @@ const Header = () => {
       <div className="nav-wrapper">
         <Link
           to={'/'}
-          className="left brand-logo"
+          className="left brand-logo logo"
         >
           Car Lovers
         </Link>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Query } from 'react-apollo';
 import Select from './Select';
 import query from '../queries/fetchCarMakes';
+import '../style/style.css'
 
 class Search extends Component {
   state = {
@@ -16,7 +17,7 @@ class Search extends Component {
     let carModel = carModels.models.find(model => model.name === selectedModel);
 
     this.props.history.push({
-      pathname: `/make/model/${carModel.id}`,
+      pathname: `/${selectedMake}/${selectedModel.replace(/ /g, '')}/${carModel.id}`,
     });
   }
   onChange(prop) {
@@ -36,6 +37,7 @@ class Search extends Component {
     const { selectedMake } = this.state;
     
     if( selectedMake === '') return '';
+
     let carModelOptions = AllMakes.find(make => make.name === selectedMake);
     return(carModelOptions.models.map((carModel) => <option key={carModel.name} value={carModel.name}>{carModel.name}</option>));
   } 
@@ -65,7 +67,12 @@ class Search extends Component {
               onChange={this.onChange("selectedModel")}
               optionItems={this.modelOptionItems(data.AllMakes)}
             />
-            <button disabled={selectedModel === ''}>Search</button>
+            <button 
+              className="btnSearch"
+              disabled={selectedModel === ''}
+            >
+              Search
+            </button>
           </form>    
           );
         }}
