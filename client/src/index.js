@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import { ApolloProvider } from 'react-apollo';
 import App from './components/App';
 import ApolloClient from 'apollo-boost';
+import 'typeface-roboto';
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000/graphql',

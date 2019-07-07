@@ -1,14 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../style/style.css'
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
 
 const Header = () => {
   return (
-    <nav>
-      <div className="nav-wrapper">
+    <div>
+    <AppBar position="static">
+        <Toolbar>
+        <div className="nav-wrapper">
         <Link
           to={'/'}
-          className="left brand-logo logo"
+          className="left logo"
         >
           Car Lovers
         </Link>
@@ -18,7 +22,9 @@ const Header = () => {
           </li>
         </ul>
       </div>
-    </nav>
+        </Toolbar>
+    </AppBar>
+    </div>
   );
 };
 

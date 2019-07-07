@@ -3,6 +3,7 @@ import { Query } from 'react-apollo';
 import query from '../queries/CarOfTheWeek';
 import Card from './Card';
 import '../style/style.css'
+import Typography from '@material-ui/core/Typography';
 
 class Home extends Component {
   render() {
@@ -25,7 +26,11 @@ class Home extends Component {
 }
 
 export const HomeComponent = () => {
-  return <h5 className="home-title" style={{ textAlign: 'center' }}>Car Of The Week</h5>;
+  return (
+    <Typography variant='display1' align='center' gutterBottom>
+      Car Of The Week
+    </Typography>
+  );
 };
 
 export default Home;

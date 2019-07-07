@@ -6,7 +6,7 @@
   "scripts": {
     "client": "npm run start --prefix client",
     "server": "nodemon server.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
     "test": "cd client && npm run test"
   },
   "repository": {
@@ -24,7 +24,6 @@
   },
   "homepage": "https://github.com/bmehra16/car-lovers-graphql#readme",
   "dependencies": {
-    "@material-ui/core": "^3.5.1",
     "axios": "^0.18.0",
     "concurrently": "^4.0.1",
     "cors": "^2.8.4",
